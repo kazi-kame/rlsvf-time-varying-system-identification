@@ -30,9 +30,9 @@ Key idea:
 
 We identify a linear FIR system:
 
-$[
+$$[
 d(k) = \mathbf{w}^T(k)\mathbf{x}(k) + n(k)
-]$
+]$$
 
 where:
 
@@ -48,26 +48,26 @@ One coefficient of $( \mathbf{w}(k) )$ changes in steps → **non-stationary pla
 
 RLS minimises the exponentially weighted cost:
 
-$[
+$$[
 J(k) = \sum_{i=1}^{k} \rho^{k-i} e^2(i)
-]$
+]$$
 
 Update equations:
 
-$[
+$$[
 \mathbf{K}(k) = \frac{\mathbf{P}(k-1)\mathbf{x}(k)}{\rho + \mathbf{x}^T(k)\mathbf{P}(k-1)\mathbf{x}(k)}
-]$
+]$$
 
-$[
+$$[
 \mathbf{w}(k) = \mathbf{w}(k-1) + \mathbf{K}(k)e(k)
-]$
+]$$
 
-$[
+$$[
 \mathbf{P}(k) = \frac{1}{\rho}
 \left[
 \mathbf{P}(k-1) - \mathbf{K}(k)\mathbf{x}^T(k)\mathbf{P}(k-1)
 \right]
-]$
+]$$
 
 where:
 
@@ -80,9 +80,9 @@ where:
 
 The forgetting factor corresponds to an **effective data window**:
 
-$[
+$$[
 N \approx \frac{1}{1 - \rho}
-]$
+]$$
 
 * Large $( \rho ) → long memory → low noise → slow tracking$
 * Small $( \rho ) → short memory → fast tracking → high variance$
@@ -95,23 +95,23 @@ Instead of fixing $( \rho )$, we estimate it from the data.
 
 ### Step 1 — Prediction error
 
-$[
+$$[
 e(k) = d(k) - \mathbf{x}^T(k)\mathbf{w}(k-1)
-]$
+]$$
 
 ### Step 2 — Local error energy (EPE)
 
-$[
+$$[
 E(k) = \frac{1}{L}\sum_{i=k-L+1}^{k} e^2(i)
-]$
+]$$
 
 This measures **recent model mismatch**.
 
 ### Step 3 — Normalised non-stationarity measure
 
-$[
+$$[
 Q(k) = \frac{E(k)}{\hat{\sigma}^2(k)}
-]$
+]$$
 
 where $( \hat{\sigma}^2(k) )$ is the global error variance.
 
@@ -122,15 +122,15 @@ Interpretation:
 
 ### Step 4 — Adaptive memory length
 
-$[
+$$[
 N(k) = \frac{N_{\max}}{Q(k)}
-]$
+]$$
 
 ### Step 5 — Forgetting factor
 
-$[
+$$[
 \rho(k) = 1 - \frac{1}{N(k)}
-]$
+]$$
 
 So the algorithm:
 
@@ -164,9 +164,9 @@ Baseline identification.
 
 ### Impulsive noise
 
-$[
+$$[
 n(k) = \alpha(k)A(k)
-]$
+]$$
 
 * rare large outliers
 * tests the robustness of adaptive memory
