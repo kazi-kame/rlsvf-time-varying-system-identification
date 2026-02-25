@@ -203,4 +203,4 @@ $$
 
 ```bash
 pip install -r requirements.txt
-python src/rlsvf_experiment.py
+python rlsvf_experiment.py
