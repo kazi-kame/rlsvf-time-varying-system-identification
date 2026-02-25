@@ -175,7 +175,7 @@ n(k) = \alpha(k)A(k)
 
 ## Results
 
-![Experiment 4.1 — RLS vs RLSVF](results/experiment_4_1_reproduction.png)
+![Experiment 4.1 — RLS vs RLSVF](experiment_4_1_reproduction.png)
 
 ### Parameter tracking
 
