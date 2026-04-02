@@ -47,7 +47,6 @@ w5_true_stored = None
 
 for use_outliers in [False, True]:
 
-    print(f"Running trials — outliers={'yes' if use_outliers else 'no'}...")
 
     for trial in range(N_TRIALS):
 
@@ -240,6 +239,5 @@ plt.show()
 # Summary
 #=============
 
-print("\n--- Final 100-sample mean NEE ---")
 print(f"  [Clean]     RLS: {np.mean(mean_nee_rls_clean[-100:]):.2f} dB  |  RLSVF: {np.mean(mean_nee_rlsvf_clean[-100:]):.2f} dB")
 print(f"  [Impulsive] RLS: {np.mean(mean_nee_rls_noisy[-100:]):.2f} dB  |  RLSVF: {np.mean(mean_nee_rlsvf_noisy[-100:]):.2f} dB")
